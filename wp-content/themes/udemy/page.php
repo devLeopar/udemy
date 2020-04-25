@@ -1,5 +1,19 @@
 <?php get_header(); ?>
 
+    <!-- Page Title
+    ============================================= -->
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1><?php the_title() ?></h1>
+            <span><?php 
+                	do_action( 'plugins/wp_subtitle/the_subtitle', array(
+                        'before' => '',
+                        'after'  => ''
+                    ) );
+            ?></span>
+        </div>
+    </section><!-- #page-title end -->
+
 
 <!-- Content
 ============================================= -->
