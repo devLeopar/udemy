@@ -1,0 +1,15 @@
+.vscode
+wp-admin
+wp-includes
+/*.php
+/*.html
+/*.txt
+/wp-content/plugins
+/wp-content/upgrade
+/wp-content/uploads
+/wp-content/index.php
+/wp-content/themes/twentynineteen
+/wp-content/themes/twentyseventeen
+/wp-content/themes/twentytwenty
+/wp-content/themes/index.php
+/wp-content/themes/udemy/assets
