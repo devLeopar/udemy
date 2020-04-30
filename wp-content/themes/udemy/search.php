@@ -20,6 +20,15 @@
           ============================================= -->
           <div class="postcontent nobottommargin clearfix">
 
+            <?php 
+            
+              // echo get_search_link( 'Hello' );
+              // echo '<br>';
+              // the_search_query();
+            
+            ?> 
+
+
             <!-- Search Box
             ============================================= -->
             <div class="col_full card">

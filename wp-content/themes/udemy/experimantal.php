@@ -23,7 +23,9 @@ get_header();
         <div class="container clearfix">
             <?php
 
-            wp_loginout();
+            // wp_loginout();
+
+            single_post_title();
 
             ?>
         </div>
