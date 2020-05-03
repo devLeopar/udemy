@@ -6,8 +6,9 @@ function r_activate_plugin(){
     }
 
     global $wpdb;
+    $tableName = "$wpdb->prefix"."recipe_ratings";
     $createSQL          = "
-    CREATE TABLE `". $wpdb->prefix ."recipe_ratings` (
+    CREATE TABLE `$tableName` (
         `ID` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
         `recipe_id` BIGINT(20) UNSIGNED NOT NULL DEFAULT '0',
         `rating` FLOAT(3,2) UNSIGNED NOT NULL DEFAULT '0.00',
@@ -17,8 +18,11 @@ function r_activate_plugin(){
     ENGINE=InnoDB " . $wpdb->get_charset_collate() .";";
 
     require( ABSPATH . "/wp-admin/includes/upgrade.php" );
-    dbDelta( $createSQL );
 
+    // If that table already created do not run this creation algorithm again
+    if( $wpdb->get_var("SHOW TABLES LIKE '$tableName'") != $tableName ){
+    dbDelta( $createSQL );
+    }
 }
 
 
