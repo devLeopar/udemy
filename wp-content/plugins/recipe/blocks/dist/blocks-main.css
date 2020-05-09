@@ -1,0 +1,12 @@
+@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+/* Plain CSS */
+/* SCSS */
+.wp-block-udemy-recipe ul.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+  font-family: 'Lato', sans-serif; }
+
+.wp-block-udemy-recipe li {
+  margin: 0;
+  padding: 0; }
+
