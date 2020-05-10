@@ -23,6 +23,8 @@ function r_activate_plugin(){
     if( $wpdb->get_var("SHOW TABLES LIKE '$tableName'") != $tableName ){
     dbDelta( $createSQL );
     }
+
+    wp_schedule_event( time(), 'daily', 'r_daily_recipe_hook' );
 }
 
 
