@@ -39,6 +39,9 @@ include( 'includes/shortcodes/auth-alt-form.php' );
 include( 'includes/front/logout-link.php' );
 include( 'includes/admin/dashboard-widgets.php' );
 include( 'includes/shortcodes/twitter-follow.php' );
+include( 'includes/admin/menus.php' );
+include( 'includes/admin/options-page.php' );
+include( 'process/save-options.php' );
 // Hooks
 register_activation_hook( __FILE__, 'r_activate_plugin' );
 register_deactivation_hook( __FILE__, 'r_deactivate_plugin' );
@@ -62,6 +65,7 @@ add_action( 'wp_ajax_nopriv_recipe_user_login', 'recipe_user_login' );
 // add_filter( 'authenticate', 'r_alt_authenticate', 100, 3 );
 add_filter( 'wp_nav_menu_secondary_items', 'ju_new_nav_menu_items', 999 );
 add_action( 'wp_dashboard_setup', 'r_dashboard_widgets' );
+add_action( 'admin_menu', 'r_admin_menus' );
 
 
 // Shortcodes
