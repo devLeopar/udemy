@@ -3,9 +3,9 @@
 function r_get_random_recipe(){
     global $wpdb;
 
-    return $wpdb->get_var($wpdb->prepare("SELECT `ID` FROM %d
+    return $wpdb->get_var("SELECT `ID` FROM `" . $wpdb->posts . "`
     WHERE post_status='publish' AND post_type='recipe'
-    ORDER BY rand() LIMIT 1",$wpdb->posts));
+    ORDER BY rand() LIMIT 1");
 }
 
 
