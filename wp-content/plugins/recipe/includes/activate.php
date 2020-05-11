@@ -5,6 +5,9 @@ function r_activate_plugin(){
         wp_die( __('You must update Wordpress to join the lightside','recipe') );
     }
 
+    recipe_init();
+    flush_rewrite_rules();
+
     global $wpdb;
     $tableName = "$wpdb->prefix"."recipe_ratings";
     $createSQL          = "
