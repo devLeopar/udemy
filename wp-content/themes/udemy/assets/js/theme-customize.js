@@ -2,7 +2,7 @@
  * Created by test on 3/27/2017.
  */
 (function($){
-    wp.customize( 'ju_header_show_search', function(value){
+    wp.customize( 'ju_header_show_search', function( value ){
         value.bind(function(new_val){
             if( new_val ){
                 $("#top-search").show();
@@ -11,7 +11,8 @@
             }
         });
     });
-    wp.customize( 'ju_header_show_cart', function(value){
+
+    wp.customize( 'ju_header_show_cart', function( value ){
         value.bind(function(new_val){
             if( new_val ){
                 $("#top-cart").show();

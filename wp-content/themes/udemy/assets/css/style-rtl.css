@@ -1,3 +1,17 @@
+/*-----------------------------------------------------------------------------------
+
+	Theme Name: Canvas
+	Theme URI: http://themes.semicolonweb.com/html/canvas
+	Description: The Multi-Purpose Template
+	Author: SemiColonWeb
+	Author URI: http://themeforest.net/user/semicolonweb
+	Version: 5.0.2
+
+	-- RTL CSS --
+
+-----------------------------------------------------------------------------------*/
+
+
 
 html,
 body { direction: rtl; }
@@ -37,9 +51,11 @@ body { direction: rtl; }
 
 .col_full { margin-left: 0; }
 
+.postcontent.col_last,
+.sidebar.col_last { float: left; }
+
 .col_last {
 	margin-left: 0 !important;
-	float: left;
 	clear: left;
 }
 

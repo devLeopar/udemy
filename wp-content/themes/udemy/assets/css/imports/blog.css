@@ -40,11 +40,6 @@
 
 .entry-image iframe { display: block; }
 
-.entry-image video {
-	display: block;
-	width: 100%;
-}
-
 .entry-image img { border-radius: 3px; }
 
 .entry-title h2 {
@@ -428,10 +423,8 @@ body:not(.device-touch) .entry-link {
 }
 
 .postcontent .post-timeline {
-	padding-left: 0;
+	padding-left: 100px;
 	margin-right: 0 !important;
-	margin-left: 100px;
-	overflow: visible;
 }
 
 .postcontent .post-timeline .entry {
@@ -635,19 +628,14 @@ body:not(.device-touch) .entry-link {
 
 .author-image {
 	float: left;
-	width: 64px;
-	height: 64px;
+	width: 84px;
+	height: 84px;
 	margin-right: 15px;
 }
 
 .author-image img {
-	width: 64px;
-	height: 64px;
-}
-
-.author-desc {
-	position: relative;
-	overflow: hidden;
+	width: 84px;
+	height: 84px;
 }
 
 

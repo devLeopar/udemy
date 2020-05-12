@@ -1167,6 +1167,8 @@ body.device-touch.device-xs .portfolio-notitle .portfolio-overlay { display: non
 	padding-bottom: 60px;
 }
 
+#portfolio-ajax-single h2 { font-size: 26px; }
+
 
 /* Portfolio Single - Meta
 -----------------------------------------------------------------*/
