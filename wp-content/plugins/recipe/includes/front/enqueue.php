@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function r_enqueue_scripts(){
     wp_register_style( 'r_rateit', plugins_url( '/assets/rateit/rateit.css', RECIPE_PLUGIN_URL ) );
@@ -27,5 +27,3 @@ function r_enqueue_scripts(){
     wp_enqueue_script( 'r_rateit' );
     wp_enqueue_script( 'r_main' );
 }
-
-?>

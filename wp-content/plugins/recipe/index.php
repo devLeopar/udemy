@@ -42,6 +42,9 @@ include( 'includes/shortcodes/twitter-follow.php' );
 include( 'includes/admin/menus.php' );
 include( 'includes/admin/options-page.php' );
 include( 'process/save-options.php' );
+include( 'includes/admin/origin-fields.php' );
+include( 'process/save-origin.php' );
+
 // Hooks
 register_activation_hook( __FILE__, 'r_activate_plugin' );
 register_deactivation_hook( __FILE__, 'r_deactivate_plugin' );
@@ -66,7 +69,10 @@ add_action( 'wp_ajax_nopriv_recipe_user_login', 'recipe_user_login' );
 add_filter( 'wp_nav_menu_secondary_items', 'ju_new_nav_menu_items', 999 );
 add_action( 'wp_dashboard_setup', 'r_dashboard_widgets' );
 add_action( 'admin_menu', 'r_admin_menus' );
-
+add_action( 'origin_add_form_fields', 'r_origin_add_form_fields' );
+add_action( 'origin_edit_form_fields', 'r_origin_edit_form_fields' );
+add_action( 'create_origin', 'r_save_origin_meta' );
+add_action( 'edited_origin', 'r_save_origin_meta' );
 
 // Shortcodes
 add_shortcode( 'recipe_creator', 'r_recipe_creator_shortcode' );

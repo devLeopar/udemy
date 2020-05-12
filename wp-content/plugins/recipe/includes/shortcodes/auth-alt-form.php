@@ -1,13 +1,14 @@
-<?php 
+<?php
 
 function r_recipe_auth_alt_form_shortcode(){
-    if( is_user_logged_in() ){
-        return '';
-    }
-    $formHTML           = '<div class="col_one_third nobottommargin">';
-    $errors             = isset( $_GET['login'] ) ? explode( ',',$_GET['login']) : [];
+  if( is_user_logged_in() ){
+    return '';
+  }
 
-    foreach( $errors as $error ){
+  $formHTML           =   '<div class="col_one_third nobottommargin">';
+  $errors             =   isset($_GET['login']) ? explode( ',', $_GET['login']) : [];
+
+  foreach( $errors as $error ){
 		if( $error === 'empty_username' ){
 			$formHTML       .=  '<div class="alert alert-warning">Please enter an e-mail.</div>';
 		}
@@ -25,34 +26,31 @@ function r_recipe_auth_alt_form_shortcode(){
 		}
 	}
 
-    $formHTML           .= wp_login_form([
-        'echo'          => false,
-        'redirect'      => home_url( '/' )
-    ]);
+  $formHTML           .=  wp_login_form([
+    'echo'            =>  false,
+    'redirect'        =>  home_url( '/' )
+  ]);
 
-    $formHTML          .= '</div>';
+  $formHTML           .=  '</div>';
 
-
-    return $formHTML;
+  return $formHTML;
 }
 
 function r_alt_authenticate( $user, $username, $password ){
-    if( $_SERVER['REQUEST_METHOD'] !== 'POST' ){
-      return $user;
-    }
-  
-    if( !is_wp_error($user) ){
-      return $user;
-    }
-  
-    $error_codes          = join( ',', $user->get_error_codes() );
-    $login_url            = home_url( 'my-account');
-    $login_url            = add_query_arg(
-      'login', $error_codes, $login_url
-    );
-  
-    wp_redirect($login_url);
-    exit;
+  if( $_SERVER['REQUEST_METHOD'] !== 'POST' ){
+    return $user;
   }
 
-?>
+  if( !is_wp_error($user) ){
+    return $user;
+  }
+
+  $error_codes          = join( ',', $user->get_error_codes() );
+  $login_url            = home_url( 'my-account');
+  $login_url            = add_query_arg(
+    'login', $error_codes, $login_url
+  );
+
+  wp_redirect($login_url);
+  exit;
+}

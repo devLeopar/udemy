@@ -43,7 +43,7 @@ function r_plugin_opts_page(){
 
     <hr>
 
-    <!-- <form method="post" action="options.php"> 
+    <!-- <form method="post" action="options.php">
     <?php
 
     settings_fields( 'r_opts_group' );
@@ -51,7 +51,7 @@ function r_plugin_opts_page(){
     submit_button();
 
     ?>
-    </form>  -->
+    </form> -->
   </div>
   <?php
 }

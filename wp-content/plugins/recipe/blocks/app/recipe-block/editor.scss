@@ -9,18 +9,14 @@
 //   padding: 0;
 // }
 /* SCSS */
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-
 .wp-block-udemy-recipe{
-    ul.list-unstyled{
-      padding-left: 0;
-      list-style: none;
-      font-family: 'Lato', sans-serif;
-    }
-  
-    li{
-      margin: 0;
-      padding: 0;
-    } 
+  ul.list-unstyled{
+    padding-left: 0;
+    list-style: none;
   }
+
+  li{
+    margin: 0;
+    padding: 0;
+  } 
+}

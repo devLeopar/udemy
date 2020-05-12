@@ -76,8 +76,7 @@ registerBlockType( 'udemy/inspector-controls-example', {
                 </PanelBody>
             </InspectorControls>,
             <div className={ props.className }>
-
-                    <TextareaControl
+                <TextareaControl
                         label={ __( 'Text Area Control', 'recipe' ) }
                         help={ __( 'Help Text', 'recipe' ) }
                         value={ props.attributes.textarea_input }
@@ -116,8 +115,6 @@ registerBlockType( 'udemy/inspector-controls-example', {
                         onChange={( new_val ) => { 
                             props.setAttributes( { range_input: new_val } ) 
                         }} />
-
-    
             </div>
         ];
     },

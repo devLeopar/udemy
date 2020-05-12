@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function r_rate_recipe(){
     global $wpdb;
@@ -10,9 +10,8 @@ function r_rate_recipe(){
         wp_send_json($output);
     }
 
-
     $post_ID            =   absint( $_POST['rid'] );
-    $rating             =   round( $_POST['rating'],1 );
+    $rating             =   round( $_POST['rating'], 1 );
     $user_IP            =   $_SERVER['REMOTE_ADDR'];
 
     $rating_count       =   $wpdb->get_var(
@@ -23,13 +22,14 @@ function r_rate_recipe(){
     if( $rating_count > 0 ){
         wp_send_json( $output );
     }
+
     // Insert Rating into database
     $wpdb->insert(
-        $wpdb->prefix. 'recipe_ratings',
+        $wpdb->prefix . 'recipe_ratings',
         [
-            'recipe_id' => $post_ID,
-            'rating'    => $rating,
-            'user_ip'   => $user_IP
+            'recipe_id' =>  $post_ID,
+            'rating'    =>  $rating,
+            'user_ip'   =>  $user_IP
         ],
         [ '%d', '%f', '%s' ]
     );
@@ -44,14 +44,12 @@ function r_rate_recipe(){
 
     update_post_meta( $post_ID, 'recipe_data', $recipe_data );
 
-    do_action( 'recipe_rated',[
-        'post_id'       =>  $post_ID,
-        'rating'        =>  $rating_count,
-        'user_IP'       =>  $user_IP
+    do_action( 'recipe_rated', [
+        'post_id'           =>  $post_ID,
+        'rating'            =>  $rating_count,
+        'user_IP'           =>  $user_IP
     ]);
 
-    $output[ 'status' ] = 2;
+    $output['status']   =   2;
     wp_send_json( $output );
 }
-
-?>
