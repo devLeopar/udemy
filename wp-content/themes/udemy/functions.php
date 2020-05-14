@@ -18,6 +18,8 @@ include( get_theme_file_path( '/includes/buddypress/profile-posts.php' ) );
 include( get_theme_file_path( '/includes/admin/author-fields.php' ) );
 include( get_theme_file_path( '/includes/avatar.php' ) );
 include( get_theme_file_path( '/includes/home-query.php' ) );
+require_once( get_theme_file_path( '/includes/libs/class-tgm-plugin-activation.php' ) );
+include( get_theme_file_path( '/includes/register-plugins.php' ) );
 
 // Hooks
 add_action( 'wp_enqueue_scripts', 'ju_enqueue' );
@@ -32,11 +34,27 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 3
 //   echo 'test';
 // });
 add_filter( 'excerpt_more', '__return_false' );
-add_action( 'show_user_profile','ju_custom_user_profile_fields' );
-add_action( 'edit_user_profile','ju_custom_user_profile_fields' );
+add_action( 'show_user_profile', 'ju_custom_user_profile_fields' );
+add_action( 'edit_user_profile', 'ju_custom_user_profile_fields' );
 add_action( 'personal_options_update', 'ju_save_extra_profile_fields' );
 add_action( 'edit_user_profile_update', 'ju_save_extra_profile_fields' );
 add_action( 'avatar_defaults', 'ju_new_avatar' );
 add_action( 'pre_get_posts', 'ju_modify_home_page_query' );
+add_action( 'tgmpa_register', 'ju_register_required_plugins' );
 
 // Shortcodes
+
+// Translation Functions
+// __( 'Returns a translated string', 'udemy ');
+// _e( 'Outputs a translated string', 'udemy' );
+// _x( 'Bass', 'Instrument', 'udemy' );
+// _n( 'Singular Form', 'Plural Form', 1, 'udemy' ); // Singular
+// _n( 'Singular Form', 'Plural Form', 2, 'udemy' ); // Plural
+// _ex( 'Bass', 'Instrument', 'udemy' );
+// _nx( 'Singular', 'Plural', 2, 'Instrument', 'udemy' );
+
+// // HIGHLY recommended translation functions
+// esc_html__( 'Returns an escaped translated string', 'udemy' );
+// esc_html_e( 'Outputs an escaped translated string', 'udemy' );
+// esc_html_x( 'Bass (Escaped)', 'Fish', 'udemy' );
+// wp_kses_post( __( 'Unescaped translated string', 'udemy' ) );

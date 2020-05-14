@@ -1,6 +1,6 @@
 <!-- Sidebar
 ============================================= -->
-<div class="sidebar nobottommargin col_last">
+<div class="sidebar nobottommargin col_last" role="complementary">
     <div class="sidebar-widgets-wrap">
         <?php
 

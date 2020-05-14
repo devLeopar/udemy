@@ -10,7 +10,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
-<body <?php body_class( 'stretched no-transition' ); ?>>
+<body <?php body_class( 'stretched no-transition' ); ?>
+    itemscope itemtype="https://schema.org/WebPage">
 
     <!-- Document Wrapper
     ============================================= -->
@@ -83,7 +84,7 @@
 
         <!-- Header
         ============================================= -->
-        <header id="header" class="sticky-style-2">
+        <header id="header" class="sticky-style-2" role="banner">
 
             <div class="container clearfix">
 
