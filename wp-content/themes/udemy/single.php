@@ -10,7 +10,7 @@
 
             <!-- Post Content
             ============================================= -->
-            <div class="postcontent nobottommargin clearfix">
+            <div class="postcontent nobottommargin clearfix" role="main">
 
                 <?php
 
@@ -20,6 +20,7 @@
 
                         global $post;
                         $author_ID          =   $post->post_author;
+                        $twitter            =   get_the_author_meta( 'ju_twitter', $author_ID );
                         $author_URL         =   get_author_posts_url( $author_ID );
 
                         ?>
@@ -58,7 +59,7 @@
                                         <div class="entry-image">
                                             <a href="<?php the_permalink(); ?>">
                                                 <?php 
-                                                the_post_thumbnail( 'full' ); 
+                                                the_post_thumbnail( 'ju-post-image' ); 
                                                 ?>
                                             </a>
                                         </div>
@@ -116,10 +117,12 @@
                             <!-- Post Author Info
                             ============================================= -->
                             <div class="card">
-                                <div class="card-header">
+                                <div class="card-header" itemscope 
+                                    itemtype="https://schema.org/Person">
                                     <strong>
                                         Posted by
-                                        <a href="<?php echo $author_URL; ?>"><?php the_author(); ?></a>
+                                        <a href="<?php echo $author_URL; ?>"
+                                            itemprop="name"><?php the_author(); ?></a>
                                     </strong>
                                 </div>
                                 <div class="card-body">
@@ -127,6 +130,18 @@
                                         <?php echo get_avatar( $author_ID, 90, '', false, [ 'class' => 'img-circle' ] ); ?>
                                     </div>
                                     <?php echo nl2br( get_the_author_meta( 'description' ) ); ?>
+                                    <?php
+
+                                    if( $twitter ){
+                                        ?>
+                                        <p>
+                                            Twitter: @<a href="https://twitter.com/<?php echo $twitter; ?>">
+                                                <?php echo $twitter; ?>
+                                            </a>
+                                        </p>
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
                             </div><!-- Post Single - Author End -->
 

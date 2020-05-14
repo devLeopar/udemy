@@ -44,6 +44,7 @@ include( 'includes/admin/options-page.php' );
 include( 'process/save-options.php' );
 include( 'includes/admin/origin-fields.php' );
 include( 'process/save-origin.php' );
+include( 'includes/notice.php' );
 
 // Hooks
 register_activation_hook( __FILE__, 'r_activate_plugin' );
@@ -73,6 +74,7 @@ add_action( 'origin_add_form_fields', 'r_origin_add_form_fields' );
 add_action( 'origin_edit_form_fields', 'r_origin_edit_form_fields' );
 add_action( 'create_origin', 'r_save_origin_meta' );
 add_action( 'edited_origin', 'r_save_origin_meta' );
+add_action( 'admin_notices', 'r_admin_notices' );
 
 // Shortcodes
 add_shortcode( 'recipe_creator', 'r_recipe_creator_shortcode' );
